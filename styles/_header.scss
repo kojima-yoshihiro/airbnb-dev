@@ -1,0 +1,199 @@
+//===================ハンバーガーアイコン==================//
+.mobileMenu {
+  display: inline-block;
+  position: relative;
+  z-index: 1000;
+  padding: 30px 0 0 25px;
+  cursor: pointer;
+
+  @media screen and (min-width: 1126px) {
+    display: none;
+  }
+
+  &__toggle {
+    font-size: 2.2rem;
+    color: #fff;
+  }
+
+  &__arrow {
+    display: inline-block;
+    padding: 0 0 5px 7px;
+    transition: all 0.2s;
+    & > span {
+      content: "";
+      display: block;
+      width: 5px;
+      height: 5px;
+      border-top: 1px solid #fff;
+      border-right: 1px solid #fff;
+      transform: translateX(-50%) rotate(135deg);
+    }
+  }
+}
+
+//toggleをonにしたらjQueryでonクラスが付与される
+.on {
+  transform: translateX(1px) translateY(-5px) rotateZ(180deg);
+  span {
+    border-top: 1px solid $logo-color;
+    border-right: 1px solid $logo-color;
+  }
+}
+
+//toggleをonにしたらjQueryでchange-colorクラスが付与される
+.change-color {
+  color: $logo-color;
+}
+
+//===================モバイル用メニューの中身==================//
+.mobileMenu__content {
+  background: #fff;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 990;
+  transform: translateY(-100%); //最初は画面外に隠しておく
+  transition: 0.4s cubic-bezier(0.215, 0.61, 0.355, 1);
+
+  .mobileNav {
+    &__list {
+      width: 100%;
+      padding: 90px 45px;
+    }
+    &__item {
+      a {
+        @include header-a;
+
+        &:hover {
+          text-decoration: underline;
+        }
+      }
+      .active {
+        border-bottom: 1px solid #ebebeb;
+        margin-bottom: 20px;
+        color: $logo-color;
+      }
+    }
+  }
+}
+
+//bodyにopenクラスが付くと、全画面にglobal-navが出てくる
+.open {
+  .mobileMenu__content {
+    transform: translateY(0);
+  }
+}
+
+//=================ヘッダー==================//
+.header {
+  width: 100%;
+}
+
+.nav {
+  position: relative;
+  width: 100%;
+  height: 82px;
+  z-index: 700;
+  background: #fff;
+  display: none;
+
+  &__inner {
+    display: flex;
+    align-items: center;
+    margin: 0 25px;
+  }
+  &__brand {
+    font-size: 2.2rem;
+    color: $logo-color;
+  }
+
+  &__list {
+    display: flex;
+    margin-left: 33px;
+  }
+
+  &__item {
+    margin-right: 30px;
+    a {
+      @include header-a;
+      display: block;
+      padding: 14px 0;
+
+      &:hover {
+        border-bottom: 2px solid $logo-color;
+      }
+    }
+  }
+}
+
+.money {
+  display: flex;
+  align-items: center;
+  margin-left: auto;
+  margin-right: 50px;
+  h2 {
+    font-size: 1.4rem;
+    font-weight: bold;
+    margin: 0 15px 0 5px;
+    align-self: flex-start;
+  }
+
+  &__btn {
+    @include btn-red;
+  }
+}
+
+.mv {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100%;
+  height: 240px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: url(/img/mv-big.jpg) no-repeat;
+  background-size: cover;
+  h1 {
+    margin: 0 30px 30px;
+    font-size: 33px;
+    font-weight: 600;
+    color: #fff;
+    line-height: 1;
+  }
+}
+
+//===================メディアクエリ===================//
+
+@media screen and (min-width: 742px) {
+  .header {
+    .mv {
+      height: 312px;
+      h1 {
+        margin: 0 11% 25px;
+        font-size: 40px;
+        line-height: 1;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1126px) {
+  .header {
+    .nav {
+      display: block;
+    }
+    .mv {
+      height: 640px;
+      position: absolute;
+      top: 80px;
+
+      h1 {
+        display: none;
+      }
+    }
+  }
+}

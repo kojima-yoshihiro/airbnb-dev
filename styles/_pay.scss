@@ -1,0 +1,79 @@
+#pay {
+  .container {
+    .section-title {
+      margin-top: 16px;
+    }
+    .pay-inner {
+      display: flex;
+      flex-flow: column;
+      .pay-box {
+        margin-bottom: 40px;
+        .lead {
+          @include lead;
+        }
+        .text {
+          @include text;
+        }
+        a {
+          @include a-check;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 742px) {
+  #pay {
+    .container {
+      padding: 0 53px;
+      .pay-inner {
+        flex-flow: column;
+        .pay-box {
+          margin-bottom: 40px;
+          .lead {
+            @include lead;
+          }
+          .text {
+            @include text;
+          }
+          a {
+            @include a-check;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1126px) {
+  #pay {
+    .container {
+      padding: 0;
+      .section-title {
+        font-size: 3.7rem;
+      }
+      .pay-inner {
+        flex-flow: row;
+        .pay-box {
+          width: calc((100% - 74px) / 3);
+          margin-right: 37px;
+          padding-right: 24px;
+          &:nth-child(3n) {
+            margin-right: 0px;
+            padding-right: 0;
+            padding-left: 24px;
+          }
+          .lead {
+            @include lead;
+          }
+          .text {
+            @include text;
+          }
+          a {
+            @include a-check;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,169 @@
+body {
+  font-family: "Circular", "-apple-system", "BlinkMacSystemFont", "Roboto",
+    "Helvetica Neue", sans-serif;
+  font-size: 14px;
+  line-height: 1.43;
+  color: #484848;
+  background-color: #fff;
+  margin: 0;
+}
+
+.container {
+  margin: 0 auto;
+  padding: 0 24px;
+}
+hr {
+  margin-left: 0; //左寄せ
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.section-title {
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 40px;
+  line-height: 1;
+}
+
+
+@media screen and (min-width: 742px) {
+  .container {
+    max-width: 648px;
+  }
+  hr {
+    margin: 0 auto;// 中央寄せ
+  }
+  .section-title {
+    text-align: center;
+  }
+}
+
+@media screen and (min-width: 1126px) {
+  .container {
+    max-width: 1032px;
+    padding: 0;
+  }
+  .section-title {
+  font-size: 3.5rem;
+  font-weight: 600;
+}
+
+}
+
+//============アバウトセクション===============//
+#about1 {
+  width: 100%;
+  margin-top: 50px;
+  .container {
+    .about1-inner {
+      display: flex;
+      flex-flow: column;
+      justify-content: center;
+      margin-bottom: 30px;
+      .reason {
+        margin-bottom: 50px;
+        h2 {
+          @include lead;
+        }
+        .text {
+          @include text;
+          line-height: 1.4;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 742px) {
+  #about1 {
+    .container {
+      .about1-inner {
+        padding: 0 33px;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1126px) {
+  #about1 {
+    margin-top: 700px;
+    .container {
+      .about1-inner {
+        width: 100%;
+        padding: 0;
+        flex-flow: row;
+        justify-content: space-between;
+        margin-bottom: 0;
+        padding-bottom: 75px;
+        .reason {
+          flex: 0 0 430px;
+        }
+      }
+    }
+  }
+}
+
+//============3ステップセクション===============//
+#step {
+  .container {
+    .step-inner {
+      margin-top: 12px;
+
+      .box-wrap  {
+        display: flex;
+        flex-flow: column;
+        justify-content: center;
+
+        .step-box {
+          margin-bottom: 30px;
+          padding: 0 8px;
+
+          .fas {
+            border: 1.3px solid #333;
+            border-radius: 50%;
+            padding: 16px 13px;
+            margin-bottom: 18px;
+          }
+          .lead {
+            @include lead;
+          }
+          .text {
+            @include text;
+          }
+        }
+      }
+      a {
+        @include a-check;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 742px) {
+  #step {
+    .container {
+      .step-inner {
+        padding: 0 33px;
+      }
+    }
+  }
+}
+@media screen and (min-width: 1126px) {
+  #step {
+    .container {
+      .step-inner {
+        padding: 0;
+        .box-wrap {
+          flex-flow: row;
+          .step-box {
+            width: calc((100% - 74px) / 3);
+            margin-right: 37px;
+            &:nth-child(3n) {
+              margin-right: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,50 @@
+#ques {
+  .container {
+    .section-title {
+      margin-top: 24px;
+      margin-bottom: 70px;
+    }
+    .ques-inner {
+      display: flex;
+      flex-flow: column;
+      .ques-box {
+        a {
+          @include a-check;
+          border-bottom: 1px solid #ebebeb;
+          margin-top: 0;
+          padding-bottom: 24px;
+          margin-bottom: 24px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 742px) {
+  #ques {
+    .container {
+      padding: 0;
+    }
+  }
+}
+
+@media screen and (min-width: 1126px) {
+  #ques {
+    .container {
+      .section-title {
+        font-size: 3.7rem;
+        margin-bottom: 100px;
+      }
+      .ques-inner {
+        flex-flow: row;
+        .ques-box {
+          width: 50%;
+          margin-right: 16px;
+          a{
+            font-size: 1.1rem;
+          }
+        }
+      }
+    }
+  }
+}

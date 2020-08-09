@@ -1,0 +1,46 @@
+$logo-color: #008489;
+
+@mixin header-a {
+  color: #484848;
+  font-weight: 600;
+  display: block;
+  line-height: 50px;
+}
+
+@mixin btn-red {
+  width: 88px;
+  height: 36px;
+  background: #DB3842;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #fff;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  &:hover {
+    opacity: 0.7;
+  }
+}
+
+@mixin lead {
+  font-size: 1.5rem;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+@mixin text {
+  font-size: 1rem;
+  line-height: 1.7;
+
+}
+
+@mixin a-check {
+  color: $logo-color;
+  font-size: 1rem;
+  letter-spacing: .05em;
+  display: block;
+  margin-top: 18px;
+  &:hover {
+    text-decoration: underline;
+  }
+}
